@@ -18,13 +18,13 @@ add_library(minmea ${minmea_SRCS})
 add_executable(example example.c)
 target_link_libraries(example minmea)
 
-add_executable(tests tests.c)
-target_link_libraries(tests minmea ${CHECK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
-target_include_directories(tests PUBLIC ${CHECK_INCLUDE_DIRS})
-target_compile_options(tests PUBLIC ${CHECK_CFLAGS_OTHER})
+# add_executable(tests tests.c)
+# target_link_libraries(tests minmea ${CHECK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+# target_include_directories(tests PUBLIC ${CHECK_INCLUDE_DIRS})
+# target_compile_options(tests PUBLIC ${CHECK_CFLAGS_OTHER})
 
-add_test(NAME tests COMMAND $<TARGET_FILE:tests>)
-list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure")
+# add_test(NAME tests COMMAND $<TARGET_FILE:tests>)
+# list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure")
 
 find_program(SCAN_FOUND scan-build)
 

@@ -18,9 +18,8 @@ extern "C" {
 #include <stdbool.h>
 #include <time.h>
 #include <math.h>
-#ifdef MINMEA_INCLUDE_COMPAT
-#include <minmea_compat.h>
-#endif
+
+#define timegm  mktime
 
 #ifndef MINMEA_MAX_SENTENCE_LENGTH
 #define MINMEA_MAX_SENTENCE_LENGTH 80
