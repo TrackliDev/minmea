@@ -676,4 +676,19 @@ int minmea_gettime(struct timespec *ts, const struct minmea_date *date, const st
     }
 }
 
+int minmea_compare_date(const struct minmea_date *date_1, const struct minmea_date *date_2)
+{
+    return date_1->year == date_2->year &&
+           date_1->month == date_2->month &&
+           date_1->day == date_2->day;
+}
+
+int minmea_compare_time(const struct minmea_time *time_1, const struct minmea_time *time_2)
+{
+    return time_1->hours == time_2->hours &&
+           time_1->minutes == time_2->minutes &&
+           time_1->seconds == time_2->seconds &&
+           time_1->microseconds == time_2->microseconds;
+}
+
 /* vim: set ts=4 sw=4 et: */
