@@ -235,6 +235,16 @@ int minmea_getdatetime(struct tm *tm, const struct minmea_date *date, const stru
 int minmea_gettime(struct timespec *ts, const struct minmea_date *date, const struct minmea_time *time_);
 
 /**
+ * Compare minmea date instances.
+ */
+int minmea_compare_date(const struct minmea_date *date_1, const struct minmea_date *date_2);
+
+/**
+ * Compare minmea time instances.
+ */
+int minmea_compare_time(const struct minmea_time *time_1, const struct minmea_time *time_2);
+
+/**
  * Rescale a fixed-point value to a different scale. Rounds towards zero.
  */
 static inline int_least32_t minmea_rescale(const struct minmea_float *f, int_least32_t new_scale)
